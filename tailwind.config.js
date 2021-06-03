@@ -3,11 +3,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
+        primary:'#A2E3C4',
+        secondary:'#F7934C',
+        accent:'#7E6B8F',
+        dark:'#212227',
+        light:'#F7F4F3',
       },
       spacing: {
         28: '7rem',
@@ -20,9 +20,18 @@ module.exports = {
       },
       fontSize: {
         '5xl': '2.5rem',
-        '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem',
+        '10xl': '5rem',
+        '15xl': '7.5rem',
+        '20xl': '10rem',
+      },
+      height: {
+        xl: `35rem`,
+        xxl: `45rem`,
+        half: `50vh`,
+        threeQuarters: `75vh`
+      },
+      fontFamily: {
+        limelight: ['Limelight']
       },
       boxShadow: {
         sm: '0 5px 10px rgba(0, 0, 0, 0.12)',
