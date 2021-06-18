@@ -1,5 +1,5 @@
 import Container from '../components/container'
-import RecentArticles from '../components/recent-articles'
+import RecentArticles from '../components/recent-posts'
 import HeroPost from '../components/hero-post'
 import Hero from '../components/hero'
 import Layout from '../components/layout'

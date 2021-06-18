@@ -1,16 +1,8 @@
-import Avatar from '../components/avatar'
-import DateFormatter from '../components/date-formatter'
-import CoverImage from '../components/cover-image'
-import Link from 'next/link'
+import Link from 'next/link';
+import DateFormatter from './date-formatter';
+import CoverImage from './cover-image';
 
-export default function HeroPost({
-  title,
-  coverImage,
-  date,
-  excerpt,
-  author,
-  slug,
-}) {
+export default function HeroPost({ title, coverImage, date, slug }) {
   return (
     <section>
       <div className="mb-8 md:mb-16">
@@ -33,11 +25,7 @@ export default function HeroPost({
             <DateFormatter dateString={date} />
           </div>
         </div>
-        <div>
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          <Avatar name={author.name} picture={author.picture} />
-        </div>
       </div>
     </section>
-  )
+  );
 }

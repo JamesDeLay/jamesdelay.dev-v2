@@ -1,17 +1,16 @@
-import Alert from '../components/alert'
-import Footer from '../components/footer'
-import Meta from '../components/meta'
-import Navigation from './navigation'
+import Footer from './footer';
+import Meta from './meta';
+import Navigation from './navigation';
 
-export default function Layout({children }) {
+export default function Layout({ children, showNavigation = true }) {
   return (
     <>
       <Meta />
       <div className="min-h-screen">
-        <Navigation />
+        {showNavigation && <Navigation />}
         <main>{children}</main>
       </div>
       <Footer />
     </>
-  )
+  );
 }

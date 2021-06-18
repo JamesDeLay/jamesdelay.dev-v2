@@ -28,7 +28,7 @@ export default function Blog({posts}) {
         </Head>
         <PageHero 
           title="Tech Blog" 
-          blurb="Tutorials, documentation, guides, and cool code things..." 
+          blurb="Tutorials, documentation, guides, and cool code stuff." 
           />
         <Container>
         <div className="flex items-center justify-center p-xl mt-12 md:mt-16 w-3/4 md:w-2/3 m-auto bg-white rounded">

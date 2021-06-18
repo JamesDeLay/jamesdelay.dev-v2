@@ -2,14 +2,16 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
-import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
+import { AUTHOR_NAME, CMS_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
+import Navigation from '../../components/navigation'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
@@ -17,9 +19,12 @@ export default function Post({ post, morePosts, preview }) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview}>
-      <Container>
-        <Header />
+    <Layout>
+      <div className="w-full bg-dark p-2">
+        <Container>
+          {/* <FontAwesomeIcon icon={faArrowLeft}  className="text-primary text-3xl" /> */}
+        </Container>
+      </div>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -27,7 +32,7 @@ export default function Post({ post, morePosts, preview }) {
             <article className="mb-32">
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {AUTHOR_NAME} | {post.title}
                 </title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
@@ -37,11 +42,12 @@ export default function Post({ post, morePosts, preview }) {
                 date={post.date}
                 author={post.author}
               />
+              <Container>
               <PostBody content={post.content} />
+              </Container>
             </article>
           </>
         )}
-      </Container>
     </Layout>
   )
 }

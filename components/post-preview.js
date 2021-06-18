@@ -1,24 +1,26 @@
-import Avatar from '../components/avatar'
-import DateFormatter from '../components/date-formatter'
-import CoverImage from './cover-image'
-import Link from 'next/link'
-import cn from 'classnames'
+import Link from 'next/link';
+import cn from 'classnames';
+import DateFormatter from './date-formatter';
+import CoverImage from './cover-image';
 
 export default function PostPreview({
   title,
   coverImage,
   date,
   excerpt,
-  author,
   slug,
-  readTime, 
+  readTime,
   isFeatureCard
 }) {
   return (
-    // <div className={`bg-white hover:transform hover:scale-50 shadow-card ${}`}>
-    <div className={cn('bg-white hover:scale-50 shadow-card rounded-2xl overflow-hidden', {
-        'col-span-3': isFeatureCard,
-      })}>
+    <div
+      className={cn(
+        'bg-white hover:scale-50 shadow-card rounded-2xl overflow-hidden',
+        {
+          'col-span-3': isFeatureCard
+        }
+      )}
+    >
       <div className="mb-5">
         <CoverImage
           slug={slug}
@@ -29,7 +31,7 @@ export default function PostPreview({
         />
       </div>
       <div className="pt-2 pb-2 px-4">
-        <h3 className="text-2xl mb-3 leading-snug font-sans font-bold hover:text-accent">
+        <h3 className="text-2xl mb-3 leading-snug font-serif font-bold hover:text-accent">
           <Link as={`/posts/${slug}`} href="/posts/[slug]">
             <a className="hover:underline">{title}</a>
           </Link>
@@ -38,8 +40,10 @@ export default function PostPreview({
           <DateFormatter dateString={date} />
         </div>
         <p className="text-lg leading-relaxed mb-4 text-dark">{excerpt}</p>
-        <p className="text-xs font-sans text-opacity-80 leading-relaxed mb-4 text-right text-gray-700">{readTime} MIN READ</p>
+        <p className="text-xs font-mono text-opacity-80 leading-relaxed mb-4 text-right text-gray-700">
+          {readTime} MIN READ
+        </p>
       </div>
     </div>
-  )
+  );
 }
