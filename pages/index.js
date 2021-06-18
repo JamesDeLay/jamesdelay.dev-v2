@@ -1,38 +1,26 @@
 import Container from '../components/container'
-import MoreStories from '../components/more-stories'
+import RecentArticles from '../components/recent-articles'
 import HeroPost from '../components/hero-post'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
+import { getRecentPosts } from '../lib/api'
 import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
+import { AUTHOR_NAME, AUTHOR_SLOGAN, CMS_NAME } from '../lib/constants'
 import About from '../components/about'
+import SectionSeparator from '../components/section-separator'
 
-export default function Index({ allPosts }) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+export default function Index({ recentPosts }) {
   return (
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>{AUTHOR_NAME} | {AUTHOR_SLOGAN}</title>
         </Head>
         <Hero />
         <Container>
-          <div className="mt-8">
           <About />
-          </div>
-          {/* {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
+          <SectionSeparator />
+          <RecentArticles posts={recentPosts} />
         </Container>
       </Layout>
     </>
@@ -40,7 +28,7 @@ export default function Index({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
+  const recentPosts = getRecentPosts([
     'title',
     'date',
     'slug',
@@ -50,6 +38,6 @@ export async function getStaticProps() {
   ])
 
   return {
-    props: { allPosts },
+    props: { recentPosts },
   }
 }

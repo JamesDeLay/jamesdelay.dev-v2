@@ -31,12 +31,19 @@ module.exports = {
         threeQuarters: `75vh`
       },
       fontFamily: {
-        limelight: ['Limelight']
+        hero: ['Righteous'],
+        sans: ['Open Sans'],
+        serif: ['IBM Plex Serif']
       },
       boxShadow: {
         sm: '0 5px 10px rgba(0, 0, 0, 0.12)',
         md: '0 8px 30px rgba(0, 0, 0, 0.12)',
+        card: `rgb(39 44 49 / 6%) 8px 14px 38px, rgb(39 44 49 / 3%) 1px 3px 8px`
       },
+      backgroundImage: theme => ({
+        'hero-pattern': "url('/assets/svgs/hero.svg')",
+        // 'footer-texture': "url('/img/footer-texture.png')",
+       })
     },
   },
 }

@@ -3,14 +3,12 @@ import Footer from '../components/footer'
 import Meta from '../components/meta'
 import Navigation from './navigation'
 
-export default function Layout({ preview, children }) {
+export default function Layout({children }) {
   return (
     <>
       <Meta />
       <div className="min-h-screen">
-        {/* TODO: NAVIGATION HERE */}
         <Navigation />
-        {/* <Alert preview={preview} /> */}
         <main>{children}</main>
       </div>
       <Footer />
