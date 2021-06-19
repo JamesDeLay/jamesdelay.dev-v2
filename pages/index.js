@@ -1,20 +1,21 @@
-import Container from '../components/container'
-import RecentArticles from '../components/recent-posts'
-import HeroPost from '../components/hero-post'
-import Hero from '../components/hero'
-import Layout from '../components/layout'
-import { getRecentPosts } from '../lib/api'
-import Head from 'next/head'
-import { AUTHOR_NAME, AUTHOR_SLOGAN, CMS_NAME } from '../lib/constants'
-import About from '../components/about'
-import SectionSeparator from '../components/section-separator'
+import Head from 'next/head';
+import Container from '../components/container';
+import RecentArticles from '../components/recent-posts';
+import Hero from '../components/hero';
+import Layout from '../components/layout';
+import { getRecentItemsByType, POSTS } from '../lib/api';
+import { AUTHOR_NAME, AUTHOR_SLOGAN } from '../lib/constants';
+import About from '../components/about';
+import SectionSeparator from '../components/section-separator';
 
 export default function Index({ recentPosts }) {
   return (
     <>
       <Layout>
         <Head>
-          <title>{AUTHOR_NAME} | {AUTHOR_SLOGAN}</title>
+          <title>
+            {AUTHOR_NAME} | {AUTHOR_SLOGAN}
+          </title>
         </Head>
         <Hero />
         <Container>
@@ -24,20 +25,19 @@ export default function Index({ recentPosts }) {
         </Container>
       </Layout>
     </>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const recentPosts = getRecentPosts([
+  const recentPosts = getRecentItemsByType(POSTS, [
     'title',
     'date',
     'slug',
     'author',
     'coverImage',
-    'excerpt',
-  ])
-
+    'excerpt'
+  ]);
   return {
-    props: { recentPosts },
-  }
+    props: { recentPosts }
+  };
 }
