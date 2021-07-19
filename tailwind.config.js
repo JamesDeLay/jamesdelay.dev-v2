@@ -3,11 +3,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+<<<<<<< Updated upstream
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
         'accent-7': '#333',
         success: '#0070f3',
         cyan: '#79FFE1',
+=======
+        primary: '#A2E3C4',
+        secondary: '#F7934C',
+        accent: '#7E6B8F',
+        dark: '#212227',
+        semiTransparentDark: `#20242782`,
+        light: '#F7F4F3'
+>>>>>>> Stashed changes
       },
       spacing: {
         28: '7rem',

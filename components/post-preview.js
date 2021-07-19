@@ -12,7 +12,18 @@ export default function PostPreview({
   slug,
 }) {
   return (
+<<<<<<< Updated upstream
     <div>
+=======
+    <div
+      className={cn(
+        'bg-white hover:scale-50 shadow-card rounded-xl overflow-hidden',
+        {
+          'col-span-3': isFeatureCard
+        }
+      )}
+    >
+>>>>>>> Stashed changes
       <div className="mb-5">
         <CoverImage
           slug={slug}

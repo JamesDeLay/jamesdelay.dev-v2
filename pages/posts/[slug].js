@@ -54,10 +54,16 @@ export async function getStaticProps({ params }) {
     'author',
     'content',
     'ogImage',
+<<<<<<< Updated upstream
     'coverImage',
   ])
   const content = await markdownToHtml(post.content || '')
 
+=======
+    'coverImage'
+  ]);
+  const content = await markdownToHtml(post.content || '');
+>>>>>>> Stashed changes
   return {
     props: {
       post: {
