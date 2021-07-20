@@ -21,8 +21,11 @@ export default function Index({ recentPosts, recentProjects, recentSnippets }) {
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>
+            {AUTHOR_NAME} | {AUTHOR_SLOGAN}
+          </title>
         </Head>
+        <Hero />
         <Container>
           <About />
           <SectionSeparator />
@@ -34,11 +37,11 @@ export default function Index({ recentPosts, recentProjects, recentSnippets }) {
         </Container>
       </Layout>
     </>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
+  const recentPosts = getRecentItemsByType(POSTS, [
     'title',
     'date',
     'slug',

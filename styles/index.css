@@ -13,3 +13,7 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
+
+.text-bold-shadow {
+  text-shadow:  0 5px black;
+}

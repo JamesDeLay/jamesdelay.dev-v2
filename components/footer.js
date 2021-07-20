@@ -1,28 +1,38 @@
 import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
+import { AUTHOR_SOCIALS } from '../lib/constants'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin, faPatreon, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faFilePdf, faTerminal } from '@fortawesome/free-solid-svg-icons'
+import cn from 'classnames'
 
 export default function Footer() {
+  const ICON_MAP = {
+    github: faGithub,
+    twitter: faTwitter,
+    repl: faTerminal,
+    linkedIn: faLinkedin,
+    resume: faFilePdf,
+    email: faEnvelope,
+    patreon: faPatreon
+  }
+
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
+    <footer className="bg-dark">
       <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
-          </div>
+        <div className="py-6 flex flex-col items-center w-full">
+          <div className="grid grid-cols-3 justify-items-center ">
+            {
+              Object.keys(AUTHOR_SOCIALS).map((social, idx) => (
+                <div key={social} className={cn("text-primary hover:text-accent text-2xl md:text-4xl mb-2 cursor-pointer", {
+                  'col-span-3': idx === Object.keys(AUTHOR_SOCIALS).length - 1
+                })}>
+                  <FontAwesomeIcon icon={ICON_MAP[social]} className="m-4" onClick={() => window.open(AUTHOR_SOCIALS[social].link)}/>
+                </div>
+                  ))
+                }
+            </div>
+          <p className="text-secondary text-lg text-center text-bold font-mono">Copyright James DeLay© 2021</p>
+          <p className="text-secondary text-sm text-center font-mono">{`< JD />`}</p>
         </div>
       </Container>
     </footer>

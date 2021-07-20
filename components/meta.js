@@ -1,8 +1,9 @@
-import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
+import Head from 'next/head';
+import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants';
 
 export default function Meta() {
   return (
+    // TODO: make this configurable through constants
     <Head>
       <link
         rel="apple-touch-icon"
@@ -38,5 +39,5 @@ export default function Meta() {
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>
-  )
+  );
 }
