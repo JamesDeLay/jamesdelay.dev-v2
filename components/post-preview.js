@@ -15,7 +15,7 @@ export default function PostPreview({
   return (
     <div
       className={cn(
-        'bg-white hover:scale-50 shadow-card rounded-2xl overflow-hidden',
+        'bg-white hover:scale-50 shadow-card rounded-xl overflow-hidden',
         {
           'col-span-3': isFeatureCard
         }

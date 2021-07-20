@@ -7,6 +7,7 @@ module.exports = {
         secondary: '#F7934C',
         accent: '#7E6B8F',
         dark: '#212227',
+        semiTransparentDark: `#20242782`,
         light: '#F7F4F3'
       },
       spacing: {
