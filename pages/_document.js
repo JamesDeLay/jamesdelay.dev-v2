@@ -3,10 +3,6 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 export default class MyDocument extends Document {
   render() {
     return (
-<<<<<<< Updated upstream
-      <Html lang="en">
-        <Head />
-=======
       <Html lang="en" className="bg-light">
         <Head>
           {/* Google Fonts */}
@@ -21,7 +17,6 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
->>>>>>> Stashed changes
         <body>
           <Main />
           <NextScript />

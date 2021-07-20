@@ -1,17 +1,3 @@
-<<<<<<< Updated upstream
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
-import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
-
-export default function Index({ allPosts }) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
-=======
 import Head from 'next/head';
 import Container from '../components/container';
 import RecentArticles from '../components/recent-posts';
@@ -31,7 +17,6 @@ import RecentProjects from '../components/recent-projects';
 import RecentSnippets from '../components/recent-snippets';
 
 export default function Index({ recentPosts, recentProjects, recentSnippets }) {
->>>>>>> Stashed changes
   return (
     <>
       <Layout>
@@ -39,20 +24,6 @@ export default function Index({ recentPosts, recentProjects, recentSnippets }) {
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
         <Container>
-<<<<<<< Updated upstream
-          <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-=======
           <About />
           <SectionSeparator />
           <RecentArticles posts={recentPosts} />
@@ -60,7 +31,6 @@ export default function Index({ recentPosts, recentProjects, recentSnippets }) {
           <RecentProjects projects={recentProjects} />
           <SectionSeparator />
           <RecentSnippets snippets={recentSnippets} />
->>>>>>> Stashed changes
         </Container>
       </Layout>
     </>
@@ -74,14 +44,6 @@ export async function getStaticProps() {
     'slug',
     'author',
     'coverImage',
-<<<<<<< Updated upstream
-    'excerpt',
-  ])
-
-  return {
-    props: { allPosts },
-  }
-=======
     'excerpt'
   ]);
 
@@ -105,5 +67,4 @@ export async function getStaticProps() {
   return {
     props: { recentPosts, recentProjects, recentSnippets }
   };
->>>>>>> Stashed changes
 }

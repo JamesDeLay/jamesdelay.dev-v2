@@ -12,9 +12,6 @@ export default function PostPreview({
   slug,
 }) {
   return (
-<<<<<<< Updated upstream
-    <div>
-=======
     <div
       className={cn(
         'bg-white hover:scale-50 shadow-card rounded-xl overflow-hidden',
@@ -23,7 +20,6 @@ export default function PostPreview({
         }
       )}
     >
->>>>>>> Stashed changes
       <div className="mb-5">
         <CoverImage
           slug={slug}
