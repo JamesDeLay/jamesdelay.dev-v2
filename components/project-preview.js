@@ -10,7 +10,8 @@ import IconJS from './icons/icon-js';
 import IconPython from './icons/icon-python';
 import IconGolang from './icons/icon-golang';
 import IconNodeJS from './icons/icon-nodejs';
-import { GOLANG, JAVASCRIPT, NODE_JS, PYTHON } from '../lib/constants';
+import { ANSIBLE, GOLANG, JAVASCRIPT, NODE_JS, PYTHON } from '../lib/constants';
+import IconAnsible from './icons/icon-ansible';
 
 function getProjectIcon(tech) {
   switch (tech) {
@@ -22,6 +23,8 @@ function getProjectIcon(tech) {
       return <IconGolang />;
     case NODE_JS:
       return <IconNodeJS />;
+    case ANSIBLE:
+      return <IconAnsible />;
     default:
       return <></>;
   }
@@ -48,7 +51,7 @@ export default function ProjectPreview({
         }
       )}
     >
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-2/3 p-6">
         <CoverImage
           slug={slug}
           title={title}
@@ -57,7 +60,7 @@ export default function ProjectPreview({
           width={isFeatureCard ? 695 : 556}
         />
       </div>
-      <div className="w-full md:w-1/2 bg-white relative">
+      <div className="w-full md:w-1/3 bg-white relative">
         <h3 className="text-xl mt-8 mb-3 text-center leading-snug font-serif font-bold hover:text-accent">
           <Link as={`/projects/${slug}`} href="/projects/[slug]">
             <a className="hover:underline">{title}</a>
@@ -95,31 +98,5 @@ export default function ProjectPreview({
         </div>
       </div>
     </div>
-    // <div
-    //   className={cn(
-    //     'bg-white hover:scale-50 shadow-card rounded-2xl overflow-hidden w-f',
-    //     {
-    //       'col-span-3': isFeatureCard
-    //     }
-    //   )}
-    // >
-    //   <div className="mb-5">
-    //     <CoverImage
-    //       slug={slug}
-    //       title={title}
-    //       src={coverImage}
-    //       height={isFeatureCard ? 348 : 278}
-    //       width={isFeatureCard ? 695 : 556}
-    //     />
-    //   </div>
-    //   <div className="pt-2 pb-2 px-4">
-    //     <h3 className="text-2xl mb-3 leading-snug font-serif font-bold hover:text-accent">
-    //       <Link as={`/posts/${slug}`} href="/posts/[slug]">
-    //         <a className="hover:underline">{title}</a>
-    //       </Link>
-    //     </h3>
-
-    //   </div>
-    // </div>
   );
 }
