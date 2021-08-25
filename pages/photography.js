@@ -22,18 +22,3 @@ export default function Photography() {
     </>
   );
 }
-
-// export async function getStaticProps() {
-//   const posts = getAllPosts([
-//     'title',
-//     'date',
-//     'slug',
-//     'author',
-//     'coverImage',
-//     'excerpt',
-//   ])
-
-//   return {
-//     props: { posts },
-//   }
-// }

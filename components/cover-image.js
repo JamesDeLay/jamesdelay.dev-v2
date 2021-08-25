@@ -8,7 +8,8 @@ export default function CoverImage({
   slug,
   height,
   width,
-  containerClass = ''
+  containerClass = '',
+  type = 'post'
 }) {
   const image = (
     <Image
@@ -25,7 +26,7 @@ export default function CoverImage({
   return (
     <div className={`${containerClass} sm:mx-0`}>
       {slug ? (
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
+        <Link as={`/${type}/${slug}`} href="/[type]/[slug]">
           <a aria-label={title}>{image}</a>
         </Link>
       ) : (

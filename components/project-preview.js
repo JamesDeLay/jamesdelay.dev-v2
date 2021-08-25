@@ -58,6 +58,7 @@ export default function ProjectPreview({
           src={coverImage}
           height={isFeatureCard ? 348 : 278}
           width={isFeatureCard ? 695 : 556}
+          type="projects"
         />
       </div>
       <div className="w-full md:w-1/3 bg-white relative">
