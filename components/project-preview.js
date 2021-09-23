@@ -52,7 +52,7 @@ export default function ProjectPreview({
       className={cn(
         'w-full bg-white flex flex-col md:flex-row mb-12 shadow-card rounded-xl overflow-hidden',
         {
-          'flex flex-row-reverse': flipLayout
+          'md:flex-row-reverse flex-row-reverse': flipLayout,
         }
       )}
     >
@@ -66,7 +66,7 @@ export default function ProjectPreview({
           width={isFeatureCard ? 695 : 556}
         />
       </div>
-      <div className="w-full md:w-1/3 bg-white relative">
+      <div className="w-full md:w-1/2 bg-white relative">
         <h3 className="text-xl mt-8 mb-3 text-center leading-snug font-serif font-bold hover:text-accent">
           {/* <Link as={`/projects/${slug}`} href="/projects/[slug]"> */}
           <a href={githubLink} className="hover:underline">

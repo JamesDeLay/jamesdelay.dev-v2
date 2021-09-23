@@ -8,7 +8,7 @@ export default function RecentProjects({ projects }) {
       <div className="w-full pb-24">
         {projects.map((project, idx) => (
           <ProjectPreview
-            flipLayout={idx === 1}
+            flipLayout={idx % 2}
             key={project.slug}
             title={project.title}
             coverImage={project.coverImage}
