@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import cn from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import DateFormatter from './date-formatter';
 import CoverImage from './cover-image';
 
@@ -10,7 +8,14 @@ import IconJS from './icons/icon-js';
 import IconPython from './icons/icon-python';
 import IconGolang from './icons/icon-golang';
 import IconNodeJS from './icons/icon-nodejs';
-import { ANSIBLE, GOLANG, JAVASCRIPT, NODE_JS, PYTHON } from '../lib/constants';
+import {
+  ANSIBLE,
+  GOLANG,
+  JAVASCRIPT,
+  NODE_JS,
+  PROJECTS,
+  PYTHON
+} from '../lib/constants';
 import IconAnsible from './icons/icon-ansible';
 
 function getProjectIcon(tech) {
@@ -53,6 +58,7 @@ export default function ProjectPreview({
     >
       <div className="w-full md:w-2/3 p-6">
         <CoverImage
+          overrideLink={githubLink}
           slug={slug}
           title={title}
           src={coverImage}
@@ -62,22 +68,16 @@ export default function ProjectPreview({
       </div>
       <div className="w-full md:w-1/3 bg-white relative">
         <h3 className="text-xl mt-8 mb-3 text-center leading-snug font-serif font-bold hover:text-accent">
-          <Link as={`/projects/${slug}`} href="/projects/[slug]">
-            <a className="hover:underline">{title}</a>
-          </Link>
+          {/* <Link as={`/projects/${slug}`} href="/projects/[slug]"> */}
+          <a href={githubLink} className="hover:underline">
+            {title}
+          </a>
+          {/* </Link> */}
         </h3>
         <div className="text-sm mb-4 text-gray-600 font-sans text-center">
           <DateFormatter dateString={date} />
         </div>
         {/* // eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-        <div
-          className="absolute top-2 right-2 text-4xl cursor-pointer"
-          onClick={() => {
-            window.open(githubLink);
-          }}
-        >
-          <FontAwesomeIcon className="text-gray-200" icon={faGithub} />
-        </div>
         <div className="h-full p-6">
           <p className="text-lg leading-relaxed mb-4 text-dark">{excerpt}</p>
           <div className="flex justify-end w-full pt-4 pb-2">

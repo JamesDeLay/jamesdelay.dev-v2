@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import Link from 'next/link';
 import Image from 'next/image';
+import { POSTS } from '../lib/constants';
 
 export default function CoverImage({
   title,
@@ -8,7 +9,9 @@ export default function CoverImage({
   slug,
   height,
   width,
-  containerClass = ''
+  containerClass = '',
+  linkSlug = POSTS,
+  overrideLink
 }) {
   const image = (
     <Image
@@ -25,9 +28,13 @@ export default function CoverImage({
   return (
     <div className={`${containerClass} sm:mx-0`}>
       {slug ? (
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a aria-label={title}>{image}</a>
-        </Link>
+        overrideLink ? (
+          <a href={overrideLink} aria-label={title}>{image}</a>
+        ) : (
+          <Link as={`/${linkSlug}/${slug}`} href={`/${linkSlug}/[slug]`}>
+            <a aria-label={title}>{image}</a>
+          </Link>
+        )
       ) : (
         <div className={containerClass}>{image}</div>
       )}

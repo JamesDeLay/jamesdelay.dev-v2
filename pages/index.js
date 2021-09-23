@@ -14,7 +14,7 @@ import { AUTHOR_NAME, AUTHOR_SLOGAN } from '../lib/constants';
 import About from '../components/about';
 import SectionSeparator from '../components/section-separator';
 import RecentProjects from '../components/recent-projects';
-import RecentSnippets from '../components/recent-snippets';
+import CoolStuff from '../components/recent-snippets';
 
 export default function Index({ recentPosts, recentProjects, recentSnippets }) {
   return (
@@ -32,8 +32,8 @@ export default function Index({ recentPosts, recentProjects, recentSnippets }) {
           <RecentArticles posts={recentPosts} />
           <SectionSeparator />
           <RecentProjects projects={recentProjects} />
-          <SectionSeparator />
-          <RecentSnippets snippets={recentSnippets} />
+          {/* <SectionSeparator /> */}
+          {/* <CoolStuff snippets={recentSnippets} /> */}
         </Container>
       </Layout>
     </>

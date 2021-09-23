@@ -1,7 +1,6 @@
 ---
-name: 'Example Code Snippet'
-language: 'javascript'
-tags: ['js', 'test']
+name: 'Python Switch'
+language: 'python'
 ---
 ```python
 
