@@ -48,10 +48,10 @@ export default function Footer() {
               </div>
             ))}
           </div>
-          <p className="text-black text-lg text-center text-bold font-mono">
+          <p className="text-secondary text-sm text-center text-bold font-mono">
             Copyright James DeLay© 2021
           </p>
-          <p className="text-black text-sm text-center font-mono">{`< JD />`}</p>
+          <p className="text-secondary text-xs text-center font-mono">{`< JD />`}</p>
         </div>
       </Container>
     </footer>

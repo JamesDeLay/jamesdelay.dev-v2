@@ -50,7 +50,7 @@ export default function ProjectPreview({
   return (
     <div
       className={cn(
-        'w-full bg-white flex flex-col md:flex-row mb-12 shadow-card rounded-xl overflow-hidden',
+        'w-full bg-white flex flex-col md:flex-row mb-16 shadow-card rounded-xl overflow-hidden',
         {
           'md:flex-row-reverse flex-row-reverse': flipLayout,
         }

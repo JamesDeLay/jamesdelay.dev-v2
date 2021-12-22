@@ -5,7 +5,7 @@ export default function RecentArticles({ posts }) {
   return (
     <section>
       <SectionHeader>Recent Posts</SectionHeader>
-      <div className="grid grid-cols-1 md:grid-cols-3 md:gap-12 gap-y-12 pb-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 gap-y-12 pb-24">
         {posts.map(post => (
           <PostPreview
             key={post.slug}
