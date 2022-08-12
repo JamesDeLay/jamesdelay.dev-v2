@@ -1,10 +1,10 @@
 ---
-title: 'Showcase Wesbite (this site)'
+title: 'Portfolio Website'
 excerpt: 'I built this website to showcase all the things that I build.'
 coverImage: '/assets/imgs/site-logo.png'
 ogImage:
   url: '/assets/imgs/site-logo.png'
 date: '2021-08-20'
-technologies: ["JAVASCRIPT"]
+technologies: ["JAVASCRIPT", "NEXT", "TAILWIND"]
 githubLink: "https://github.com/JamesDeLay/showcase-site"
 ---
