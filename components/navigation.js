@@ -73,8 +73,9 @@ export default function Navigation() {
           <span>
             <FontAwesomeIcon
               icon={faCodeBranch}
+              size="2x"
               className={cn(
-                'text-3xl md:text-5xl cursor-pointer transform rotate-45',
+                'cursor-pointer transform rotate-45',
                 {
                   'text-primary hover:text-accent': isIntoView,
                   'text-light': !isIntoView
@@ -85,7 +86,8 @@ export default function Navigation() {
         </Link>
         <FontAwesomeIcon
           icon={faBars}
-          className={cn('text-3xl md:text-5xl cursor-pointer transform', {
+          size="2x"
+          className={cn('cursor-pointer transform', {
             'text-primary hover:text-accent': isIntoView,
             'text-light': !isIntoView
           })}

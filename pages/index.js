@@ -8,6 +8,11 @@ import { AUTHOR_NAME, AUTHOR_SLOGAN } from '../lib/constants';
 import About from '../components/about';
 import SectionSeparator from '../components/section-separator';
 import RecentProjects from '../components/recent-projects';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+// Prevent fontawesome from adding its CSS since we did it manually above:
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false;
 
 export default function Index({ recentPosts, recentProjects }) {
   return (
