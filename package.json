@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -29,12 +30,12 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.2.5",
-    "autoprefixer": "^10.2.1",
+    "autoprefixer": "^10.4.8",
     "eslint": "^8.21.0",
     "faker": "^5.5.3",
-    "postcss": "^8.2.4",
+    "postcss": "^8.4.16",
     "prettier": "^1.19.1",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.2.19"
   },
   "license": "MIT"
 }
