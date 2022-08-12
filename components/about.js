@@ -1,16 +1,25 @@
 import ReactTypingEffect from 'react-typing-effect';
-import Headshot from './headshot';
+import Image from "next/image"
+
 import {
   AUTHOR_DESCRIPTIVE_ADJECTIVES,
   AUTHOR_BIO,
-  AUTHOR_HEADSHOT
+  AUTHOR_HEADSHOT,
+  AUTHOR_NAME
 } from '../lib/constants';
 
 export default function About() {
   return (
-    <section className="w-full grid grid-cols-1 md:grid-cols-2 md:pt-28 pt-12">
-      <div className="mt-2 mb-2 justify-items-center">
-        <Headshot size={48} src={AUTHOR_HEADSHOT} />
+    <section className="w-full grid lg:grid-cols-2 gap-12 md:grid-cols-1 sm:grid-cols-1 md:pt-28 pt-12">
+      <div className="mt-12 mb-12 flex justify-center">
+        <Image
+        src={AUTHOR_HEADSHOT}
+        className={`rounded-full m-auto`}
+        alt={AUTHOR_NAME}
+        fit="fill"
+        height={500}
+        width={500}
+      />
       </div>
       <article className="p-1 justify-items-center">
         <h3 className="text-center text-4xl font-serif">Hi, I'm James</h3>

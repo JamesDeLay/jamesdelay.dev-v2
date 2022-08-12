@@ -9,8 +9,6 @@ export default function Hero() {
         </h1>
         <h2 className="text-center text-2xl text-light md:text-5xl font-hero text-bold-shadow">
           Software Engineer
-          <span className="text-secondary"> | </span>
-          Technical Consultant
         </h2>
       </div>
       <div
