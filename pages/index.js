@@ -3,13 +3,7 @@ import Container from '../components/container';
 import RecentArticles from '../components/recent-posts';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
-import {
-  getAllItemsByType,
-  getRecentItemsByType,
-  POSTS,
-  PROJECTS,
-  SNIPPETS
-} from '../lib/api';
+import { getRecentItemsByType, POSTS, PROJECTS } from '../lib/api';
 import { AUTHOR_NAME, AUTHOR_SLOGAN } from '../lib/constants';
 import About from '../components/about';
 import SectionSeparator from '../components/section-separator';
@@ -28,8 +22,12 @@ export default function Index({ recentPosts, recentProjects }) {
         <Container>
           <About />
           <SectionSeparator />
-          <RecentArticles posts={recentPosts} />
-          <SectionSeparator />
+          {recentPosts.length === 3 && (
+            <>
+              <RecentArticles posts={recentPosts} />
+              <SectionSeparator />
+            </>
+          )}
           <RecentProjects projects={recentProjects} />
         </Container>
       </Layout>
@@ -37,7 +35,7 @@ export default function Index({ recentPosts, recentProjects }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const recentPosts = getRecentItemsByType(POSTS, [
     'title',
     'date',
@@ -57,14 +55,7 @@ export async function getStaticProps() {
     'githubLink'
   ]);
 
-  const recentSnippets = getAllItemsByType(SNIPPETS, [
-    'name',
-    'language',
-    'tags',
-    'content'
-  ]);
-
   return {
-    props: { recentPosts, recentProjects, recentSnippets }
+    props: { recentPosts, recentProjects }
   };
 }

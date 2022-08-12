@@ -5,6 +5,6 @@ coverImage: '/assets/imgs/site-logo.png'
 ogImage:
   url: '/assets/imgs/site-logo.png'
 date: '2021-08-20'
-technologies: ["JAVASCRIPT"]
+technologies: ["JAVASCRIPT", "NEXT", "TAILWIND"]
 githubLink: "https://github.com/JamesDeLay/showcase-site"
 ---

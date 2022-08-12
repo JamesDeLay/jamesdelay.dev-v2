@@ -7,8 +7,10 @@ export default function Hero() {
         <h1 className="text-center text-5xl mb-1 md:mb-3 text-light md:text-7xl font-hero text-bold-shadow">
           James DeLay
         </h1>
-        <h2 className="text-center text-3xl text-light md:text-5xl font-hero text-bold-shadow">
+        <h2 className="text-center text-2xl text-light md:text-5xl font-hero text-bold-shadow">
           Software Engineer
+          <span className="text-secondary"> | </span>
+          Technical Consultant
         </h2>
       </div>
       <div
