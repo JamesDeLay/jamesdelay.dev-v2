@@ -29,7 +29,9 @@ export default function CoverImage({
     <div className={`${containerClass} sm:mx-0`}>
       {slug ? (
         overrideLink ? (
-          <a href={overrideLink} aria-label={title}>{image}</a>
+          <a href={overrideLink} aria-label={title}>
+            {image}
+          </a>
         ) : (
           <Link as={`/${linkSlug}/${slug}`} href={`/${linkSlug}/[slug]`}>
             <a aria-label={title}>{image}</a>
