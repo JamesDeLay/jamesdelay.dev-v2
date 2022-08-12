@@ -6,9 +6,8 @@ import PostBody from '../../components/post-body';
 import PostHeader from '../../components/post-header';
 import Layout from '../../components/layout';
 import { getAllItemsByType, getTypeBySlug } from '../../lib/api';
-import { PROJECTS } from "../../lib/constants"
+import { PROJECTS, AUTHOR_NAME } from '../../lib/constants';
 import PostTitle from '../../components/post-title';
-import { AUTHOR_NAME } from '../../lib/constants';
 import markdownToHtml from '../../lib/markdownToHtml';
 
 export default function Post({ project }) {
@@ -18,11 +17,6 @@ export default function Post({ project }) {
   }
   return (
     <Layout>
-      <div className="w-full bg-dark p-2">
-        <Container>
-          {/* <FontAwesomeIcon icon={faArrowLeft}  className="text-primary text-3xl" /> */}
-        </Container>
-      </div>
       {router.isFallback ? (
         <PostTitle>Loading…</PostTitle>
       ) : (
