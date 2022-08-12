@@ -1,4 +1,3 @@
-import cn from 'classnames';
 import DateFormatter from './date-formatter';
 import CoverImage from './cover-image';
 

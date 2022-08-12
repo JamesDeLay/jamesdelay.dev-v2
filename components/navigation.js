@@ -98,7 +98,7 @@ export default function Navigation() {
             key={r.label}
             className="font-hero text-center text-2xl md:text-4xl  text-light mb-4 hover:text-accent cursor-pointer p-2"
           >
-            <Link href={r.route}>
+            <Link href={r.route} onClick={() => setIsOpen(!isOpen)}>
               <span>{r.label}</span>
             </Link>
           </p>

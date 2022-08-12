@@ -1,6 +1,6 @@
 ---
-title: 'Portfolio Website'
-excerpt: 'I built this website to showcase all the things that I build.'
+title: 'Personal Website (this site)'
+excerpt: 'I built this website to share all the things that I learn & build with the world.'
 coverImage: '/assets/imgs/site-logo.png'
 ogImage:
   url: '/assets/imgs/site-logo.png'
