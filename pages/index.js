@@ -12,9 +12,9 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 // Prevent fontawesome from adding its CSS since we did it manually above:
 import { config } from '@fortawesome/fontawesome-svg-core';
-config.autoAddCss = false;
 
 export default function Index({ recentPosts, recentProjects }) {
+  config.autoAddCss = false;
   return (
     <>
       <Layout>
