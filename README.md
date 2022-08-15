@@ -1,8 +1,9 @@
-# Showcase Site
+# jamesdelay.dev
 
-A website to showcase the stuff I build. Built using NextJS, remarkToHTML, tailwindCSS.
+A portfolio website to showcase my projects, tinkerings, and other code-related things. Built using React, NextJS, remarkToHTML, & tailwindCSS. The articles are written in Markdown and server-side rendered using remarkToHTML. The site is deployed to Vercel and can be found [here](https://jamesdelay.dev).
 
-## To Do:
-- [] Use Next API call to fetch specific READMEs from GitHub and build them as remarkHTML blog pages
-- [] Embed YouTube videos in snippets and expand functionality of "cool" stuff section
-- [] Refactor Post vs Project specific logic in the code; make it DRY
+## Tasks & Improvements:
+- [ ] GitHub API to display "pinned" repos as Recent Projects - grab dates from commit 
+- [ ] Refactor Post vs Project specific components & logic in the code; make it DRY
+- [ ] Add more articles to blog
+- [ ] Build out a "hobby" page

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Container from '../components/container';
 import RecentArticles from '../components/recent-posts';
-import Hero from '../components/hero';
+import SiteHero from '../components/site-hero';
 import Layout from '../components/layout';
 import { getRecentItemsByType, POSTS, PROJECTS } from '../lib/api';
 import { AUTHOR_NAME, AUTHOR_SLOGAN } from '../lib/constants';
@@ -23,7 +23,7 @@ export default function Index({ recentPosts, recentProjects }) {
             {AUTHOR_NAME} | {AUTHOR_SLOGAN}
           </title>
         </Head>
-        <Hero />
+        <SiteHero />
         <Container>
           <About />
           <SectionSeparator />
