@@ -80,9 +80,6 @@ export default function ProjectPreview({
         <div className="h-full p-6">
           <p className="text-lg leading-relaxed mb-4 text-dark">{excerpt}</p>
           <div className="flex justify-end content-center absolute right-6 bottom-4">
-            <p className="text-xs font-mono text-opacity-80 leading-relaxed text-right self-center text-gray-700">
-              {readTime} MIN READ
-            </p>
             <div className="flex justify-end w-fit ml-4">
               {technologies.map((t, idx) => {
                 if (idx + 1 === technologies.length) {

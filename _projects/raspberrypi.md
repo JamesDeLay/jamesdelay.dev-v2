@@ -1,6 +1,6 @@
 ---
 title: 'Raspberry Pi Home Lab: Part I '
-excerpt: 'I built and automated the setup of a Raspberry Pi cluster using Ansible and k3s. All you need to get started is an SD card flashed with Raspian and a basic understanding of your home network.'
+excerpt: 'I built and automated the setup of a Raspberry Pi cluster using Ansible and k3s. All you need to get started is an SD card flashed with Raspian and a basic understanding of your home network. I plan to use the cluster as a sandbox to learn more about Kubernetes.'
 coverImage: '/assets/projects/raspberry_pi/pi_logo.jpeg'
 ogImage:
   url: '/assets/projects/raspberry_pi/pi_logo.jpeg'

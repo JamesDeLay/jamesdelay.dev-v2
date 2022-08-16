@@ -1,6 +1,6 @@
 ---
-title: 'Personal Website (this site)'
-excerpt: 'I built this website to share all the things that I learn & build with the world.'
+title: 'Portfolio Website'
+excerpt: "I built this website, the one you're currently browsing, to share all the cool programming related things I've worked on. Built using React, NextJS, and TailwindCSS"
 coverImage: '/assets/imgs/site-logo.png'
 ogImage:
   url: '/assets/imgs/site-logo.png'
