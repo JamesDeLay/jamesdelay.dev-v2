@@ -6,7 +6,7 @@ export default function PostHeader({ title, coverImage, date }) {
     <section>
       <PageHero title={title} blurb={date} />
       <CoverImage
-        containerClass="-mt-12 mx-1 md:w-3/4 md:m-auto md:-mt-24"
+        containerClass="-mt-12 mx-1 w-3/4 md:m-auto md:-mt-24"
         title={title}
         src={coverImage}
         height={620}

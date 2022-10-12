@@ -31,7 +31,7 @@ export default function Post({ post }) {
               <title>
                 {AUTHOR_NAME} | {post.title}
               </title>
-              <meta property="og:image" content={post.ogImage.url} />
+              <meta property="og:image" content={post.coverImage} />
             </Head>
             <PostHeader
               title={post.title}
