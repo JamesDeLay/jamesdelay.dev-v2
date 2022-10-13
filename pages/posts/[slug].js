@@ -17,16 +17,11 @@ export default function Post({ post }) {
   }
   return (
     <Layout>
-      <div className="w-full bg-dark p-2">
-        <Container>
-          {/* <FontAwesomeIcon icon={faArrowLeft}  className="text-primary text-3xl" /> */}
-        </Container>
-      </div>
       {router.isFallback ? (
         <PostTitle>Loading…</PostTitle>
       ) : (
         <>
-          <article className="mb-32">
+          <article className="pb-32 bg-white overflow-hidden">
             <Head>
               <title>
                 {AUTHOR_NAME} | {post.title}

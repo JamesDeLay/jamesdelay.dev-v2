@@ -56,7 +56,7 @@ export default function ProjectPreview({
   githubLink
 }) {
   return (
-    <div className="w-full bg-white flex flex-col md:flex-row mb-12 shadow-card rounded-xl overflow-hidden">
+    <div className="w-full bg-white flex flex-col md:flex-row shadow-card rounded-xl overflow-hidden">
       <div className="w-full md:w-2/3 p-6">
         <CoverImage
           overrideLink={githubLink}

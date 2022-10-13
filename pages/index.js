@@ -1,20 +1,16 @@
 import Head from 'next/head';
 import Container from '../components/container';
-import RecentArticles from '../components/recent-posts';
 import SiteHero from '../components/site-hero';
 import Layout from '../components/layout';
-import { getRecentItemsByType, POSTS, PROJECTS } from '../lib/api';
+import { getItemsByType, getRecentItemsByType, POSTS, PROJECTS } from '../lib/api';
 import { AUTHOR_NAME, AUTHOR_SLOGAN } from '../lib/constants';
 import About from '../components/about';
 import SectionSeparator from '../components/section-separator';
-import RecentProjects from '../components/recent-projects';
-import '@fortawesome/fontawesome-svg-core/styles.css';
+import WithSectionHeader from '../layouts/with-section-header';
+import PostPreview from '../components/post-preview';
+import ProjectPreview from '../components/project-preview';
 
-// Prevent fontawesome from adding its CSS since we did it manually above:
-import { config } from '@fortawesome/fontawesome-svg-core';
-
-export default function Index({ recentPosts, recentProjects }) {
-  config.autoAddCss = false;
+export default function Index({ posts, projects }) {
   return (
     <>
       <Layout>
@@ -27,13 +23,41 @@ export default function Index({ recentPosts, recentProjects }) {
         <Container>
           <About />
           <SectionSeparator />
-          {recentPosts.length === 3 && (
-            <>
-              <RecentArticles posts={recentPosts} />
-              <SectionSeparator />
-            </>
-          )}
-          <RecentProjects projects={recentProjects} />
+          <WithSectionHeader title="Recent Posts">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-6 pb-24">
+              {posts.map(post => (
+                <PostPreview
+                  key={post.slug}
+                  title={post.title}
+                  coverImage={post.coverImage}
+                  date={post.date}
+                  author={post.author}
+                  slug={post.slug}
+                  excerpt={post.excerpt}
+                  readTime={post.readTime}
+                />
+              ))}
+            </div>
+          </WithSectionHeader>
+          <WithSectionHeader title="Recent Projects">
+            <div className="grid grid-cols-1 gap-y-6 pb-24">
+            {projects.map((project, idx) => (
+              <ProjectPreview
+                flipLayout={idx % 2}
+                key={project.slug}
+                title={project.title}
+                coverImage={project.coverImage}
+                date={project.date}
+                author={project.author}
+                slug={project.slug}
+                excerpt={project.excerpt}
+                readTime={project.readTime}
+                technologies={project.technologies}
+                githubLink={project.githubLink}
+              />
+            ))}
+            </div>
+          </WithSectionHeader>
         </Container>
       </Layout>
     </>
@@ -41,7 +65,7 @@ export default function Index({ recentPosts, recentProjects }) {
 }
 
 export async function getServerSideProps() {
-  const recentPosts = getRecentItemsByType(POSTS, [
+  const posts = getRecentItemsByType(POSTS, [
     'title',
     'date',
     'slug',
@@ -50,7 +74,7 @@ export async function getServerSideProps() {
     'excerpt'
   ]);
 
-  const recentProjects = getRecentItemsByType(PROJECTS, [
+  const projects = getItemsByType(PROJECTS, [
     'title',
     'date',
     'slug',
@@ -61,6 +85,6 @@ export async function getServerSideProps() {
   ]);
 
   return {
-    props: { recentPosts, recentProjects }
+    props: { posts, projects }
   };
 }
