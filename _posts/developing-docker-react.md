@@ -108,16 +108,19 @@ Docker knows we want quick builds so it will cache each build step to improve th
 
 ```Dockerfile
 # Dockerfile
+
 COPY package*.json .
 RUN npm install
 COPY . .
 ```
 ```ini
 #.dockerignore
+
 node_modules
 ```
 ```yaml
 # docker-compose.yml
+
 environment:
   - CHOKIDAR_USEPOLLING=true
 volumes:
@@ -140,6 +143,7 @@ When the user hits "save" their changes should be reflected immediately in the r
 Here is the `bind` mount in our `docker-compose.yml`:
 ```yaml
 # docker-compose.yml
+
 volume:
   -./src:/app/src
 ```

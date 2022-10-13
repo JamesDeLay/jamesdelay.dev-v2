@@ -7,3 +7,4 @@ A portfolio website to showcase my projects, tinkerings, and other code-related 
 - [ ] Refactor Post vs Project specific components & logic in the code; make it DRY
 - [ ] Add more articles to blog
 - [ ] Build out a "hobby" page
+- [ ] Add Github flavored Markdown
