@@ -69,7 +69,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./src:/app/src
+      - .:/app
       - /app/node_modules
 ```
 
@@ -97,7 +97,7 @@ Here's what is happening, line by line, in our docker-compose file:
 4. Set the `CHOKIDAR_USEPOLLING` environment variable to `true`
    - This is Node specific configuration
 5. Bind port `3000` of the host machine to port `3000` of the running container
-6. Bind mount the `./src` directory to the `/app/src` directory
+6. Bind mount the current `.` directory to the `/app` directory
 7. Persist `node_modules` using a volume: `/app/node_modules`
 
 ### Explanation
@@ -145,7 +145,7 @@ Here is the `bind` mount in our `docker-compose.yml`:
 # docker-compose.yml
 
 volume:
-  -./src:/app/src
+  -.:/app
 ```
 
 Now we can code in our editor, smash the save button, and see the changes because our codebase is bound to the container. Docker knows to update our container when files on our host machine change because this binding. 
