@@ -37,7 +37,7 @@ An **image** is a read-only bundle of source code, libraries, tools, dependencie
 
 A **container** is a running **image**. Often, an application will require many containers each depending on: specific ports, environmental variables, and ways to communicate with the host system. `docker-compose` allows us to manage all of this.
 
-We will be writing both `Dockerfile` and `docker-compose.yml` files. The example source code used can be [found here](https://github.com/JamesDeLay/react-flask-docker). It's a generic React application generated using `create-react-app`
+We will be writing both `Dockerfile` and `docker-compose.yml` files. The example source code used can be [found here](https://github.com/JamesDeLay/docker-react-dev). It's a generic React application generated using `create-react-app`
 
 ## Dockerizing React for Development
 
@@ -158,4 +158,4 @@ ___
 - [Chokidar](https://github.com/paulmillr/chokidar)
 - [Polling in Programming](https://en.wikipedia.org/wiki/Polling_(computer_science))
 - [Docker Documentation](https://docs.docker.com/)
-- [Source code](https://github.com/JamesDeLay/react-flask-docker)
+- [Source code](https://github.com/JamesDeLay/docker-react-dev)
