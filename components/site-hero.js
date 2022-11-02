@@ -12,9 +12,10 @@ export default function SiteHero() {
         </h2>
       </div>
       <div
-        className="absolute top-0 left-0 h-full w-full z-1 bg-hero-pattern"
+        className="absolute top-0 h-full w-full z-1 bg-hero-pattern"
         style={{
-          backgroundSize: 'cover'
+          backgroundSize: 'cover',
+          left: `-1px`
         }}
       />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
