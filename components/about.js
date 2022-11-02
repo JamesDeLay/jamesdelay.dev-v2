@@ -9,17 +9,8 @@ import {
 
 export default function About() {
   return (
-    <section className="w-full grid lg:grid-cols-2 gap-8 md:grid-cols-1 sm:grid-cols-1 md:pt-28 pt-12">
-      <div className="mt-12 mb-12 flex justify-center self-center">
-        <Image
-        src={AUTHOR_HEADSHOT}
-        className={`rounded-full m-auto`}
-        alt={AUTHOR_NAME}
-        fit="fit"
-        height={500}
-        width={500}
-      />
-      </div>
+    <section className="w-full flex flex-col-reverse md:grid lg:grid-cols-2 gap-16 md:grid-cols-1 md:pt-28 pt-12">
+      
       <article className="p-1 justify-items-center">
         <h3 className="text-center text-4xl font-serif">Hi, I'm James</h3>
         <div className="text-center h-10 mt-2 mb-2">
@@ -60,6 +51,16 @@ During my tenure at McKinsey, I've worked on numerous applications - spanning ge
  
         </section>
       </article>
+      <div className="md:mt-12 md:mb-12 flex justify-center self-center">
+        <Image
+        src={AUTHOR_HEADSHOT}
+        className={`rounded-full m-auto`}
+        alt={AUTHOR_NAME}
+        fit="fit"
+        height={500}
+        width={500}
+      />
+      </div>
     </section>
   );
 }
