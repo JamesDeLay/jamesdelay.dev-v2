@@ -1,11 +1,11 @@
-import DateFormatter from './date-formatter';
-import CoverImage from './cover-image';
+import DateFormatter from "./date-formatter";
+import CoverImage from "./cover-image";
 
 // Required Icons
-import IconJS from './icons/icon-js';
-import IconPython from './icons/icon-python';
-import IconGolang from './icons/icon-golang';
-import IconNodeJS from './icons/icon-nodejs';
+import IconJS from "./icons/icon-js";
+import IconPython from "./icons/icon-python";
+import IconGolang from "./icons/icon-golang";
+import IconNodeJS from "./icons/icon-nodejs";
 import {
   ANSIBLE,
   GOLANG,
@@ -14,12 +14,12 @@ import {
   PYTHON,
   NEXT,
   TAILWIND,
-  PUPPETEER
-} from '../lib/constants';
-import IconAnsible from './icons/icon-ansible';
-import IconNext from './icons/icon-next';
-import IconTailwind from './icons/icon-tailwind';
-import IconPuppeteer from './icons/icon-puppeteer';
+  PUPPETEER,
+} from "../lib/constants";
+import IconAnsible from "./icons/icon-ansible";
+import IconNext from "./icons/icon-next";
+import IconTailwind from "./icons/icon-tailwind";
+import IconPuppeteer from "./icons/icon-puppeteer";
 
 function getProjectIcon(tech) {
   switch (tech) {
@@ -53,10 +53,10 @@ export default function ProjectPreview({
   readTime,
   isFeatureCard,
   technologies,
-  githubLink
+  githubLink,
 }) {
   return (
-    <div className="w-full bg-white flex flex-col md:flex-row shadow-card rounded-xl overflow-hidden">
+    <div className="w-full bg-white flex flex-col md:flex-row shadow-card rounded-xl overflow-hidden transform transition duration-500 hover:scale-110">
       <div className="w-full md:w-2/3 p-6">
         <CoverImage
           overrideLink={githubLink}

@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import cn from 'classnames';
-import DateFormatter from './date-formatter';
-import CoverImage from './cover-image';
+import Link from "next/link";
+import cn from "classnames";
+import DateFormatter from "./date-formatter";
+import CoverImage from "./cover-image";
 
 export default function PostPreview({
   title,
@@ -10,14 +10,14 @@ export default function PostPreview({
   excerpt,
   slug,
   readTime,
-  isFeatureCard
+  isFeatureCard,
 }) {
   return (
     <div
       className={cn(
-        'bg-white hover:scale-50 shadow-card rounded-xl overflow-hidden',
+        "bg-white transform transition duration-500 hover:scale-110 shadow-card rounded-xl overflow-hidden",
         {
-          'col-span-3': isFeatureCard
+          "col-span-3": isFeatureCard,
         }
       )}
     >
