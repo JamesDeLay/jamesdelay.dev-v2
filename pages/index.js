@@ -11,11 +11,13 @@ import {
 import { AUTHOR_NAME, AUTHOR_SLOGAN } from "../lib/constants";
 import About from "../components/about";
 import SectionSeparator from "../components/section-separator";
-import WithSectionHeader from "../layouts/with-section-header";
+import SectionWrapper from "../layouts/section-wrapper";
 import PostPreview from "../components/post-preview";
 import ProjectPreview from "../components/project-preview";
+import { useRouter } from "next/router";
 
 export default function Index({ posts, projects }) {
+  const router = useRouter();
   return (
     <>
       <Layout>
@@ -28,8 +30,12 @@ export default function Index({ posts, projects }) {
         <Container>
           <About />
           <SectionSeparator />
-          <WithSectionHeader title="Recent Posts">
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 gap-6 pb-24">
+          <SectionWrapper
+            title="Recent Posts"
+            footerText="See more..."
+            footerAction={() => router.push("/blog")}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-12 gap-6 pb-12">
               {posts.map((post) => (
                 <PostPreview
                   key={post.slug}
@@ -43,8 +49,8 @@ export default function Index({ posts, projects }) {
                 />
               ))}
             </div>
-          </WithSectionHeader>
-          <WithSectionHeader title="Recent Projects">
+          </SectionWrapper>
+          <SectionWrapper title="Recent Projects">
             <div className="grid grid-cols-1 md:gap-y-8 gap-y-6 pb-24">
               {projects.map((project, idx) => (
                 <ProjectPreview
@@ -62,7 +68,7 @@ export default function Index({ posts, projects }) {
                 />
               ))}
             </div>
-          </WithSectionHeader>
+          </SectionWrapper>
         </Container>
       </Layout>
     </>

@@ -17,7 +17,7 @@ export default function PostPreview({
       className={cn(
         "bg-white transform transition duration-500 hover:scale-110 shadow-card rounded-xl overflow-hidden",
         {
-          "col-span-3": isFeatureCard,
+          "col-span-2": isFeatureCard,
         }
       )}
     >
